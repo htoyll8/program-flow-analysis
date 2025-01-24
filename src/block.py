@@ -12,6 +12,9 @@ class ReturnBlock(Block):
     def __init__(self, operand: Operand):
         self.operand = operand
 
+    def execute(self):
+        pass
+
 
 class JumpBlock(Block):
     def __init__(self, label: Label):

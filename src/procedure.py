@@ -16,4 +16,7 @@ class Procedure:
         self.blocks: Dict[Tuple[Label, Block]] = {}
 
     def add_block(self, label: Label, block: Block) -> None:
-        self.blocks.append((label, block))
+        self.blocks[label.value] = block
+
+    def get_block(self, label: Label):
+        return self.blocks.get(label.value)
