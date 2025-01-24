@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from operand import Operand
+from operand import Operand, Label
 
 
 class Block(ABC):
@@ -14,7 +14,7 @@ class ReturnBlock(Block):
 
 
 class JumpBlock(Block):
-    def __init__(self, label: str):
+    def __init__(self, label: Label):
         self.label = label
 
 
@@ -23,8 +23,8 @@ class BranchBlock(Block):
                  left: Operand,
                  test: str,
                  right: Operand,
-                 true_label: str,
-                 false_label: str) -> None:
+                 true_label: Label,
+                 false_label: Label) -> None:
         self.left = left
         self.test = test
         self.right = right
